@@ -1,3 +1,39 @@
+# Terrence Mckenna TimeWaveZero Research
+
+## Changes
+
+- Added Apple Silicon compilation support (separate Makefile)
+- Added python code for visualize timewave_data
+
+## Compile 
+
+### x86
+
+`make`
+
+### Apple Silicon (Arm64)
+
+`make -f Makefile.macos`
+
+## Usage 
+
+```
+Usage: twz [dtz] [neg] [step] [wf].
+ dtz = days to zero-point
+ step = steps in which to decrement time (in minutes)
+ wf = wave factor (default 64, range 2-10000)
+
+This program calculates the running values of the timewave within the given window.
+```
+
+
+`./twz-generator 10 10 1 64 > timewave_data.csv`
+
+`python timewave.py`
+
+
+![./TimewaveZeroExample.png](./TimewaveZeroExample.png)
+
 The purpose of this software and project is to further the
 Timewave Zero research started by Terence Mckenna and others.
 Calculates both with and without the infamous "Half Twist".
@@ -60,7 +96,7 @@ at a wave-factor of 6
 
  twz-point:
  Calculate the timewave value at a given point	
-
+.
  twz-generator
  Calcluate a running timewave, useful for graphing.
 
